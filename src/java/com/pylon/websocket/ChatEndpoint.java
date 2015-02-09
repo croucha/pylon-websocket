@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Logger;
     encoders = ChatMessageEncoder.class,
     decoders = ChatMessageDecoder.class
 )
-public class ChatServer {
+public class ChatEndpoint {
     
 	private final Logger log = LogManager.getLogger(getClass().getName()); 
  
