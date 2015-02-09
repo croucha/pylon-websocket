@@ -34,5 +34,5 @@ public class ChatMessageEncoder
         results.put("sender", chatMessage.getSender());
         results.put("received", chatMessage.getReceived().toString());
         return new Gson().toJson(results);
-	}
+    }
 }
