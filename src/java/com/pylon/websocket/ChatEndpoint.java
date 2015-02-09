@@ -28,15 +28,15 @@ public class ChatEndpoint {
     
 	private final Logger log = LogManager.getLogger(getClass().getName()); 
  
-	@OnOpen
-	public void open(final Session session, @PathParam("room") final String room) {
+    @OnOpen
+    public void open(final Session session, @PathParam("room") final String room) {
         log.trace("Session openend and bound to room: {}", room);
         session.getUserProperties().put("room", room);
-	}
+    }
  
     @OnMessage
     public void onMessage(final Session session, final ChatMessage chatMessage) {
-		String room = (String) session.getUserProperties().get("room");
+        String room = (String) session.getUserProperties().get("room");
         log.trace("Endpoint message: {}", chatMessage);
 		try {
             for (Session s : session.getOpenSessions()) {
