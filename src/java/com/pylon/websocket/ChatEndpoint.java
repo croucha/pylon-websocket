@@ -38,7 +38,7 @@ public class ChatEndpoint {
     public void onMessage(final Session session, final ChatMessage chatMessage) {
         String room = (String) session.getUserProperties().get("room");
         log.trace("Endpoint message: {}", chatMessage);
-		try {
+        try {
             for (Session s : session.getOpenSessions()) {
                 if (s.isOpen() && room.equals(s.getUserProperties().get("room"))) {
                     s.getBasicRemote().sendObject(chatMessage);
