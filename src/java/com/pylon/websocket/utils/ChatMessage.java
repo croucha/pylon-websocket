@@ -63,13 +63,13 @@ public class ChatMessage {
     }
     
     @Override
-	public String toString() {
+    public String toString() {
         // Define results
         Map<String,Object> results = new LinkedHashMap<>();
         results.put("message", this.message);
         results.put("sender", this.sender);
         results.put("received", this.received);
         // Return json string representation
-		return new Gson().toJson(results);
-	}
+        return new Gson().toJson(results);
+    }
 }

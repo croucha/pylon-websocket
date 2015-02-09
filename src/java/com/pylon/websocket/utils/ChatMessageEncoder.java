@@ -15,17 +15,17 @@ import org.apache.logging.log4j.Logger;
  */
 public class ChatMessageEncoder 
     implements Encoder.Text<ChatMessage> {
-    
+
     private static final Logger log = LogManager.getLogger(ChatMessageEncoder.class);
-    
-	@Override
-	public void init(final EndpointConfig config) {}
  
-	@Override
-	public void destroy() {}
- 
-	@Override
-	public String encode(final ChatMessage chatMessage) 
+    @Override
+    public void init(final EndpointConfig config) {}
+
+    @Override
+    public void destroy() {}
+
+    @Override
+    public String encode(final ChatMessage chatMessage) 
         throws EncodeException
     {
         // Define results
@@ -33,6 +33,6 @@ public class ChatMessageEncoder
         results.put("message", chatMessage.getMessage());
         results.put("sender", chatMessage.getSender());
         results.put("received", chatMessage.getReceived().toString());
-		return new Gson().toJson(results);
+        return new Gson().toJson(results);
 	}
 }
