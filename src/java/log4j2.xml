@@ -11,16 +11,7 @@
     </NoSql>
   </Appenders>
   <Loggers>
-    <Root level="error">
-      <AppenderRef ref="STDOUT"/>
-    </Root>
-    <Root level="debug">
-      <AppenderRef ref="STDOUT"/>
-    </Root>
-    <Root level="trace">
-      <AppenderRef ref="STDOUT"/>
-    </Root>
-    <Root level="info">
+    <Root level="all">
       <AppenderRef ref="STDOUT"/>
     </Root>
   </Loggers>
