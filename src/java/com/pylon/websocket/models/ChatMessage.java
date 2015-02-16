@@ -1,6 +1,7 @@
-package com.pylon.websocket.utils;
+package com.pylon.websocket.models;
 
 import com.google.gson.Gson;
+import com.pylon.websocket.interfaces.Message;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -9,55 +10,40 @@ import java.util.Map;
  *
  * @author croucha
  */
-public class ChatMessage {
+public class ChatMessage implements Message {
 	private String message;
 	private String sender;
 	private Date received;
     
-    /**
-     * @param message
-     * @return
-     */
+    @Override
     public ChatMessage setMessage(String message) {
         this.message = message;
         return this;
     }
     
-    /**
-     * @param sender
-     * @return
-     */
+    @Override
     public ChatMessage setSender(String sender) {
         this.sender = sender;
         return this;
     }
     
-    /**
-     * @param received
-     * @return
-     */
+    @Override
     public ChatMessage setReceived(Date received) {
         this.received = received;
         return this;
     }
     
-    /**
-     * @return message
-     */
+    @Override
     public String getMessage() {
         return this.message;
     }
     
-    /**
-     * @return sender
-     */
+    @Override
     public String getSender() {
         return this.sender;
     }
     
-    /**
-     * @return date message received
-     */
+    @Override
     public Date getReceived() {
         return this.received;
     }

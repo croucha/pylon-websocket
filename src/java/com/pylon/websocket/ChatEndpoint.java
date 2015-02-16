@@ -1,8 +1,8 @@
 package com.pylon.websocket;
 
-import com.pylon.websocket.utils.ChatMessage;
+import com.pylon.websocket.models.ChatMessage;
 import com.pylon.websocket.utils.ChatMessageDecoder;
-import com.pylon.websocket.utils.ChatMessageEncoder;
+import com.pylon.websocket.utils.MessageEncoder;
 import java.io.IOException;
 import javax.websocket.EncodeException;
 import javax.websocket.OnClose;
@@ -21,8 +21,8 @@ import org.apache.logging.log4j.Logger;
  */
 @ServerEndpoint(
     value = "/chat/{room}",
-    encoders = ChatMessageEncoder.class,
-    decoders = ChatMessageDecoder.class
+    encoders = {MessageEncoder.class},
+    decoders = {ChatMessageDecoder.class}
 )
 public class ChatEndpoint {
  
@@ -35,13 +35,13 @@ public class ChatEndpoint {
     }
 
     @OnMessage
-    public void onMessage(final Session session, final ChatMessage chatMessage) {
+    public void onMessage(final Session session, final ChatMessage message) {
         String room = (String) session.getUserProperties().get("room");
-        log.trace("Endpoint message: {}", chatMessage);
+        log.trace("Endpoint message: {}", message);
         try {
             for (Session s : session.getOpenSessions()) {
                 if (s.isOpen() && room.equals(s.getUserProperties().get("room"))) {
-                    s.getBasicRemote().sendObject(chatMessage);
+                    s.getBasicRemote().sendObject(message);
                 }
             }
         } catch (IOException | EncodeException e) {
