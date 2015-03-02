@@ -39,7 +39,7 @@ public class MessageEncoder
         // Define time zone
         TimeZone timeZone = TimeZone.getTimeZone("UTC");
         // Define Atom (ISO 8601) format
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         // Set time zone
         dateFormat.setTimeZone(timeZone);
         // Covert to ISO 8601
