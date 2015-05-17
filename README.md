@@ -6,6 +6,10 @@ The Pylon WebSocket server will be used as a nexus for controlling and receiving
 
 ## Installation
 ### Dependencies
-[Netbeans](https://netbeans.org/), [Tomcat](http://tomcat.apache.org/) and [Java 7 or greater](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html).
+[Java 7 or greater](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html), [Apache Tomcat 7 or greater](http://tomcat.apache.org/) and [Apache Maven](https://maven.apache.org/).
 ### Setup
-Assuming all the necessary dependencies exist in your local development environment, this project is currently being built using Netbeans and can be downloaded and opened as a Netbeans project.
+Assuming all the necessary dependencies exist in your local development environment, this project is currently being built using Apache Maven using the Tomcat plugin for war deployment.  From the shell, simply enter:
+
+```shell
+mvn tomcat7:deploy
+```
