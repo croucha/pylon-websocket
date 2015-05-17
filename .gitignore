@@ -50,3 +50,6 @@ logs
 pids
 *.pid
 *.seed
+
+# Maven
+/target
