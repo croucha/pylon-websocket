@@ -1,9 +1,7 @@
 # These ignores come from: https://github.com/github/gitignore
 
-# IDE
-/nbproject/private/
-/dist/
-/build/
+# Netbeans
+nb-configuration.xml
 
 # Windows image file caches
 Thumbs.db
